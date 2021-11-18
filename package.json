@@ -2,15 +2,14 @@
     "name": "Portifolio",
     "version": "1.0.0",
     "description": "Meu Portifolio",
-    "main": "index.html",
+    "source": "index.html",
     "scripts": {
         "start": "parcel index.html --open",
         "build": "parcel build index.html",
         "deploy": "yarn build && surge"
     },
     "dependencies": {
-        "@vercel/client": "^10.2.2",
-        "parcel": "1.12.4",
+        "parcel": "^2.0.1",
         "surge": "^0.23.0"
     },
     "devDependencies": {
