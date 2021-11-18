@@ -448,7 +448,7 @@ section .section-experiencia .empresa-habilidades li {
   display: block;
   width: 130px;
   height: 100px;
-  background: url("/detalhe.f6ebfee1.svg") no-repeat center;
+  background: url("/detalhe.b3ff14eb.svg") no-repeat center;
   position: absolute;
   top: -10rem;
   left: 2rem;
@@ -529,10 +529,10 @@ section .section-experiencia .empresa-habilidades li {
   top: -4px;
 }
 #section-formacao .formacao .cursos h3::before {
-  background: url("/cursos.b5ee1ded.svg") no-repeat center center;
+  background: url("/cursos.2203a73b.svg") no-repeat center center;
 }
 #section-formacao .formacao .idiomas h3::before {
-  background: url("/idiomas.232310db.svg") no-repeat center center;
+  background: url("/idiomas.7c855805.svg") no-repeat center center;
 }
 #section-formacao .formacao .formacao-extra li {
   font-size: 1.125rem;
@@ -611,4 +611,4 @@ section .section-experiencia .empresa-habilidades li {
   }
 }
 
-/*# sourceMappingURL=/styles.c0e7e7f1.css.map */
+/*# sourceMappingURL=/styles.41ff8cf8.css.map */
