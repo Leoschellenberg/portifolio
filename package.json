@@ -9,6 +9,7 @@
         "deploy": "yarn build && surge"
     },
     "dependencies": {
+        "@vercel/client": "^10.2.2",
         "parcel": "1.12.4",
         "surge": "^0.23.0"
     },
