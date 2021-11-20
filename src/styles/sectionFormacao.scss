@@ -123,6 +123,12 @@
 }
 
 @media (max-width: 1000px) {
+    #section-formacao .formacao .formacao-container::after {
+        width: 130px;
+        height: 100px;
+        top: -13rem;
+        left: 2rem;
+    }
     #section-experiencia {
         .formacao {
             padding-top: 5rem;
@@ -153,45 +159,78 @@
 }
 
 @media (max-width: 900px) {
-    #section-experiencia {
-        .formacao {
-            .formacao-container {
-                grid-template-columns: 1fr;
-                gap: 40px;
-                .subtitulo {
-                    text-align: center;
-                    font-size: 6rem;
-                    color: #717171;
-                    max-width: 100%;
-                }
-                .experiencia-texto {
-                    font-size: 3rem;
-                }
-                .empresa-ano {
-                    position: initial;
-                    order: 1;
-                    width: initial;
-                    text-align: left;
-                }
+    #section-formacao .formacao .formacao-container::after {
+        width: 130px;
+        height: 100px;
+        top: -8rem;
+        left: 2rem;
+    }
+    #section-formacao .formacao {
+        padding: 0;
+        justify-content: center;
+        .formacao-container {
+            grid-template-columns: 1fr;
+            gap: 40px;
+            .subtitulo {
+                text-align: center;
+                font-size: 6rem;
+                color: #717171;
+                max-width: 100%;
+            }
+            .experiencia-texto {
+                font-size: 3rem;
+            }
+            .empresa-ano {
+                position: initial;
+                order: 1;
+                width: initial;
+                text-align: left;
+            }
+            .formacao-texto {
+                text-align: center;
+                margin: 0 auto;
+                margin-bottom: 1rem;
             }
         }
     }
 }
 
-@media (max-width: 800px) {
-    #section-formacao {
+@media (max-width: 700px) {
+    #section-formacao .formacao {
+        padding: 0;
+        justify-content: center;
         .formacao-container {
-            grid-template-columns: 1fr;
-            padding: 60px 20px;
-            gap: 40px;
+            .subtitulo {
+                text-align: center;
+                font-size: 4rem;
+                color: #717171;
+                max-width: 100%;
+            }
         }
-        .formacao .subtitulo {}
-        .formacao-texto {
-            font-size: 3rem;
+    }
+}
+
+@media (max-width: 500px) {
+    #section-formacao .formacao .formacao-container::after {
+        width: 130px;
+        height: 100px;
+        top: -4.5rem;
+        left: -1rem;
+        background-size: 4rem;
+    }
+    #section-formacao .formacao {
+        .formacao-container {
+            .subtitulo {
+                text-align: center;
+                font-size: 3rem;
+                color: #717171;
+                max-width: 100%;
+            }
         }
-        .formacao-extra h3::before {
-            position: initial;
-            margin-bottom: 10px;
-        }
+    }
+    #section-formacao .formacao .cursos h3::before,
+    #section-formacao .formacao .formacao-extra h3::before {
+        left: 0;
+        top: -2rem;
     }
 }

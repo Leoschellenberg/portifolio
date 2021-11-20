@@ -63,3 +63,9 @@ main {
         }
     }
 }
+
+@media (max-width: 500px) {
+    main {
+        padding: 0.5rem;
+    }
+}
