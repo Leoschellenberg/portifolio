@@ -154,6 +154,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 (function () {
   (0, _fnRenderItems.default)();
+  var html = document.querySelector("html");
+  var checkbox = document.querySelector("#checkbox");
+  console.log(checkbox);
+  checkbox.addEventListener("change", function () {
+    html.classList.toggle('dark-mode');
+  });
 })();
 },{"./fnRenderItems":"../src/js/fnRenderItems.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -183,7 +189,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60847" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50950" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

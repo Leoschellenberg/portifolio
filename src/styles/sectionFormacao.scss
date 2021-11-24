@@ -1,6 +1,5 @@
 #section-formacao {
     display: flex;
-    color: #000;
     background-color: #383838;
     max-width: 100%;
     .formacao {
@@ -25,8 +24,7 @@
             top: -10rem;
             left: 2rem;
         }
-        .formacao .subtitulo {
-            color: #000000;
+        .subtitulo-formacao-formacao {
             max-width: 5ch;
         }
         .formacao-texto {
@@ -171,10 +169,9 @@
         .formacao-container {
             grid-template-columns: 1fr;
             gap: 40px;
-            .subtitulo {
+            .subtitulo-formacao {
                 text-align: center;
                 font-size: 6rem;
-                color: #717171;
                 max-width: 100%;
             }
             .experiencia-texto {
@@ -200,10 +197,9 @@
         padding: 0;
         justify-content: center;
         .formacao-container {
-            .subtitulo {
+            .subtitulo-formacao {
                 text-align: center;
                 font-size: 4rem;
-                color: #717171;
                 max-width: 100%;
             }
         }
@@ -220,10 +216,9 @@
     }
     #section-formacao .formacao {
         .formacao-container {
-            .subtitulo {
+            .subtitulo-formacao {
                 text-align: center;
                 font-size: 3rem;
-                color: #717171;
                 max-width: 100%;
             }
         }

@@ -5,9 +5,38 @@
 
 body {
   font-family: Roboto, "Arial", sans-serif;
-  background-color: #171717;
+  background-color: var(--background-color);
 }
 
+:root {
+  --background-color: #171717;
+  --color-header-menu: #fff;
+  --color-title: #fff;
+  --color-header-btn-saiba: #fff;
+  --color-title-sobre: #fff;
+  --color-sobre-span: #f7f7f7;
+  --color-title-contato: #fff;
+  --color-sub-contato: #b7b7b7;
+  --color-title-experiencia: #717171;
+  --color-title-formacao: #000000;
+}
+
+.dark-mode:root {
+  --background-color: #F4F4F4;
+  --color-header-menu: #525252;
+  --color-title: #525252;
+  --color-header-btn-saiba: #525252;
+  --color-title-sobre: #525252;
+  --color-sobre-span: #525252;
+  --color-title-contato: #525252;
+  --color-sub-contato: #878787;
+  --color-title-experiencia: #717171;
+  --color-title-formacao: #F4F4F4;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 @media (max-width: 1080px) {
   html {
     font-size: 93.75%;
@@ -30,7 +59,16 @@ ul {
   list-style: none;
 }
 
-.subtitulo {
+.subtitulo-formacao {
+  color: var(--color-title-formacao);
+}
+
+.subtitulo-experiencia {
+  color: var(--color-title-experiencia);
+}
+
+.subtitulo-formacao,
+.subtitulo-experiencia {
   font-size: 8rem;
   line-height: 1;
   text-transform: uppercase;
@@ -39,7 +77,8 @@ ul {
 }
 
 @media (max-width: 800px) {
-  .subtitulo {
+  .subtitulo-formacao,
+.subtitulo-experiencia {
     font-size: 3rem;
     text-transform: capitalize;
     max-width: initial !important;
@@ -80,11 +119,12 @@ header ul {
   gap: 1rem;
   list-style: none;
   justify-content: center;
+  align-items: center;
 }
 header ul li a {
   line-height: 1.3;
   text-decoration: none;
-  color: #ffffff;
+  color: var(--color-header-menu);
   padding: 0.5rem 1rem;
   display: block;
 }
@@ -115,7 +155,7 @@ main .main-div-title {
 }
 main .main-div-title h2 {
   font-size: 2.5rem;
-  color: #fff;
+  color: var(--color-title);
 }
 main .main-div-title span {
   font-size: 1.2rem;
@@ -140,8 +180,8 @@ main .main-div-title .main-div-btn .btn-saibaMais {
   text-decoration: none;
   padding: 1rem 2rem;
   font-size: 1rem;
-  color: #fff;
-  border: 1px solid #fff;
+  color: var(--color-header-btn-saiba);
+  border: 1px solid var(--color-header-btn-saiba);
 }
 main .main-div-title .main-div-btn .btn-saibaMais:hover {
   filter: brightness(80%);
@@ -189,7 +229,7 @@ section .section-sobre {
 }
 section .section-sobre h2 {
   font-size: 2.5rem;
-  color: #fff;
+  color: var(--color-title-sobre);
   font-weight: 500;
 }
 section .section-sobre p {
@@ -203,7 +243,7 @@ section .section-sobre p {
 }
 section .section-sobre span {
   font-weight: bold;
-  color: #f7f7f7;
+  color: var(--color-sobre-span);
 }
 section .section-card-work {
   display: grid;
@@ -251,7 +291,7 @@ section .section-contato ul li {
   justify-content: center;
   flex-direction: column;
   text-decoration: none;
-  color: #fff;
+  color: var(--color-title-contato);
   gap: 1rem;
 }
 section .section-contato ul li span {
@@ -261,7 +301,7 @@ section .section-contato ul li span {
 section .section-contato ul li a {
   text-align: center;
   text-decoration: none;
-  color: #b7b7b7;
+  color: var(--color-sub-contato);
   padding: 0 1rem;
   font-size: 1.2rem;
 }
@@ -281,8 +321,8 @@ section .section-experiencia {
   grid-template-columns: 1fr 2fr;
   gap: 100px;
 }
-section .section-experiencia .subtitulo {
-  color: #717171;
+section .section-experiencia .subtitulo-experiencia {
+  color: var(--color-title-experiencia);
 }
 section .section-experiencia .experiencia-texto {
   font-size: 1.5rem;
@@ -381,7 +421,7 @@ section .section-experiencia .empresa-habilidades li {
     grid-template-columns: 1fr;
     gap: 40px;
   }
-  section .section-experiencia .subtitulo {
+  section .section-experiencia .subtitulo-experiencia {
     text-align: center;
     font-size: 6rem;
     color: #717171;
@@ -395,6 +435,8 @@ section .section-experiencia .empresa-habilidades li {
     order: 1;
     width: initial;
     text-align: left;
+    color: #fff;
+    font-weight: bold;
   }
 }
 @media (max-width: 800px) {
@@ -423,7 +465,7 @@ section .section-experiencia .empresa-habilidades li {
   section .section-sobre h2 {
     font-size: 1.5rem;
   }
-  section .section-experiencia .subtitulo {
+  section .section-experiencia .subtitulo-experiencia {
     text-align: center;
     font-size: 4rem;
   }
@@ -436,9 +478,12 @@ section .section-experiencia .empresa-habilidades li {
   section .empresa {
     grid-template-columns: 1fr;
   }
-  section .section-experiencia .subtitulo {
+  section .section-experiencia .subtitulo-experiencia {
     text-align: center;
     font-size: 3rem;
+  }
+  section .section-experiencia .empresa-ano {
+    color: #fff;
   }
   section .section-sobre p {
     padding: 0;
@@ -446,7 +491,6 @@ section .section-experiencia .empresa-habilidades li {
 }
 #section-formacao {
   display: flex;
-  color: #000;
   background-color: #383838;
   max-width: 100%;
 }
@@ -473,8 +517,7 @@ section .section-experiencia .empresa-habilidades li {
   top: -10rem;
   left: 2rem;
 }
-#section-formacao .formacao .formacao .subtitulo {
-  color: #000000;
+#section-formacao .formacao .subtitulo-formacao-formacao {
   max-width: 5ch;
 }
 #section-formacao .formacao .formacao-texto {
@@ -618,10 +661,9 @@ section .section-experiencia .empresa-habilidades li {
     grid-template-columns: 1fr;
     gap: 40px;
   }
-  #section-formacao .formacao .formacao-container .subtitulo {
+  #section-formacao .formacao .formacao-container .subtitulo-formacao {
     text-align: center;
     font-size: 6rem;
-    color: #717171;
     max-width: 100%;
   }
   #section-formacao .formacao .formacao-container .experiencia-texto {
@@ -644,10 +686,9 @@ section .section-experiencia .empresa-habilidades li {
     padding: 0;
     justify-content: center;
   }
-  #section-formacao .formacao .formacao-container .subtitulo {
+  #section-formacao .formacao .formacao-container .subtitulo-formacao {
     text-align: center;
     font-size: 4rem;
-    color: #717171;
     max-width: 100%;
   }
 }
@@ -660,10 +701,9 @@ section .section-experiencia .empresa-habilidades li {
     background-size: 4rem;
   }
 
-  #section-formacao .formacao .formacao-container .subtitulo {
+  #section-formacao .formacao .formacao-container .subtitulo-formacao {
     text-align: center;
     font-size: 3rem;
-    color: #717171;
     max-width: 100%;
   }
 
@@ -672,6 +712,91 @@ section .section-experiencia .empresa-habilidades li {
     left: 0;
     top: -2rem;
   }
+}
+.switch {
+  --line: #b1b1b1;
+  --dot: #212121;
+  --circle: #b1b1b1;
+  --duration: .3s;
+  --text: #ffffff;
+  cursor: pointer;
+}
+.switch input {
+  display: none;
+}
+.switch input + div {
+  position: relative;
+}
+.switch input + div:before, .switch input + div:after {
+  --s: 1;
+  content: "";
+  position: absolute;
+  height: 4px;
+  top: 10px;
+  width: 24px;
+  background: var(--line);
+  transform: scaleX(var(--s));
+  transition: transform var(--duration) ease;
+}
+.switch input + div:before {
+  --s: 0;
+  left: 0;
+  transform-origin: 0 50%;
+  border-radius: 2px 0 0 2px;
+}
+.switch input + div:after {
+  left: 28px;
+  transform-origin: 100% 50%;
+  border-radius: 0 2px 2px 0;
+}
+.switch input + div span {
+  padding-left: 56px;
+  line-height: 24px;
+  color: var(--text);
+}
+.switch input + div span:before {
+  --x: 0;
+  --b: var(--circle);
+  --s: 4px;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 var(--s) var(--b);
+  transform: translateX(var(--x));
+  transition: box-shadow var(--duration) ease, transform var(--duration) ease;
+}
+.switch input + div span:not(:empty) {
+  padding-left: 64px;
+}
+.switch input:checked + div:before {
+  --s: 1;
+}
+.switch input:checked + div:after {
+  --s: 0;
+}
+.switch input:checked + div span:before {
+  --x: 28px;
+  --s: 12px;
+  --b: var(--dot);
+}
+
+.switch + .switch {
+  margin-top: 32px;
+}
+
+.dribbble {
+  position: fixed;
+  display: block;
+  right: 20px;
+  bottom: 20px;
+}
+.dribbble img {
+  display: block;
+  height: 28px;
 }
 
 /*# sourceMappingURL=/styles.41ff8cf8.css.map */

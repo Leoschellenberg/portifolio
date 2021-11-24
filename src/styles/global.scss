@@ -5,10 +5,37 @@
 
 body {
     font-family: Roboto, 'Arial', sans-serif;
-    background-color: #171717;
+    background-color: var(--background-color);
+}
+
+:root {
+    --background-color: #171717;
+    --color-header-menu: #fff;
+    --color-title: #fff;
+    --color-header-btn-saiba: #fff;
+    --color-title-sobre: #fff;
+    --color-sobre-span: #f7f7f7;
+    --color-title-contato: #fff;
+    --color-sub-contato: #b7b7b7;
+    --color-title-experiencia: #717171;
+    --color-title-formacao: #000000;
+}
+
+.dark-mode:root {
+    --background-color: #F4F4F4;
+    --color-header-menu: #525252;
+    --color-title: #525252;
+    --color-header-btn-saiba: #525252;
+    --color-title-sobre: #525252;
+    --color-sobre-span: #525252;
+    --color-title-contato: #525252;
+    --color-sub-contato: #878787;
+    --color-title-experiencia: #717171;
+    --color-title-formacao: #F4F4F4;
 }
 
 html {
+    scroll-behavior: smooth;
     @media (max-width: 1080px) {
         font-size: 93.75%;
     }
@@ -28,7 +55,16 @@ ul {
     list-style: none;
 }
 
-.subtitulo {
+.subtitulo-formacao {
+    color: var(--color-title-formacao);
+}
+
+.subtitulo-experiencia {
+    color: var(--color-title-experiencia)
+}
+
+.subtitulo-formacao,
+.subtitulo-experiencia {
     font-size: 8rem;
     line-height: 1;
     text-transform: uppercase;
@@ -37,7 +73,8 @@ ul {
 }
 
 @media (max-width: 800px) {
-    .subtitulo {
+    .subtitulo-formacao,
+    .subtitulo-experiencia {
         font-size: 3rem;
         text-transform: capitalize;
         max-width: initial !important;
