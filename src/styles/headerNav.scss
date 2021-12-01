@@ -1,0 +1,199 @@
+#blur {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    z-index: 2000;
+}
+
+#nav {
+    position: fixed;
+    display: block;
+    height: 100%;
+    width: 30vw;
+    right: -80vw;
+    top: 0;
+    background-color: rgb(33, 33, 33, 99.8%);
+    box-shadow: 0px 0px 60px -5px rgb(255, 255, 255, .05);
+    border-radius: 1rem 0 0 1rem;
+    z-index: -1;
+    transition: .5s;
+    h2 {
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+    }
+    ul {
+        display: flex;
+        width: 100%;
+        padding: 2.5rem 0 0 0;
+        flex-direction: column;
+        li:first-child {
+            margin-top: 1vh !important;
+            color: #9f00f5;
+        }
+        li {
+            display: flex;
+            padding: 1rem;
+            text-transform: uppercase;
+            font-size: 1.5rem;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid rgb(0, 0, 0, .1);
+        }
+        .menu-li {
+            &:after {
+                content: '/>';
+                color: transparent;
+                margin-left: .2rem;
+            }
+            &:before {
+                content: '<';
+                color: transparent;
+                margin-right: .2rem;
+            }
+            &:hover {
+                a {
+                    transition: .5s;
+                    color: #9f00f5;
+                    box-shadow: #9f00f5;
+                }
+                &:before,
+                &:after {
+                    transition: .5s;
+                    color: #9f00f5 !important;
+                }
+            }
+        }
+        .menu-theme {
+            color: var(--color-header-menu);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            span {
+                font-weight: bold;
+                font-size: 1.2rem;
+                margin: 0 .5rem;
+                color: violet;
+            }
+            .btnDark {
+                color: #701cda;
+            }
+            .btnLight {
+                color: #a839ff;
+            }
+        }
+        li a {
+            line-height: 1.3;
+            text-decoration: none;
+            color: var(--color-header-menu);
+            display: block;
+        }
+    }
+    #btnCloseMenu {
+        display: flex;
+        border: none;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        width: 3rem;
+        height: 100%;
+        background-color: rgb(60 60 60);
+        border-radius: 1rem 0 0 1rem;
+        //top: 3rem;
+        font-weight: bold;
+        font-size: 1rem;
+        color: #e7e7e7;
+        z-index: 2000;
+        text-decoration: none;
+        //box-shadow: 0px 0px 20px -5px rgb(159, 0, 245);
+        cursor: pointer;
+        img {
+            height: 1.8rem;
+        }
+        &:hover {
+            img {
+                height: 2rem !important;
+            }
+            filter: brightness(80%);
+        }
+    }
+}
+
+#nav.active {
+    display: flex;
+    z-index: 10000;
+    height: 100%;
+    width: 30vw;
+    right: 0;
+    width: -30vw;
+    top: 0;
+}
+
+#wrap.active {
+    -webkit-filter: blur(6px);
+    filter: blur(6px);
+    width: 100%;
+    transition: .2s;
+}
+
+@media(max-width: 1000px) {
+    #nav {
+        width: 40vw !important;
+        ul li {
+            font-size: 1.2rem;
+        }
+        .menu-theme {
+            .btnDark,
+            .btnLight {
+                font-size: 1.2rem;
+            }
+        }
+    }
+}
+
+@media(max-width: 600px) {
+    #nav {
+        width: 50vw !important;
+        ul li {
+            font-size: 1.2rem;
+        }
+        .menu-theme {
+            .btnDark,
+            .btnLight {
+                font-size: 1.2rem;
+            }
+        }
+    }
+}
+
+@media(max-width: 500px) {
+    #nav {
+        width: 60vw !important;
+        ul li {
+            font-size: 1rem;
+        }
+    }
+}
+
+@media(max-width: 400px) {
+    #nav {
+        width: 70vw !important;
+        ul li {
+            font-size: 1rem;
+        }
+        .menu-theme {
+            .btnDark,
+            .btnLight {
+                font-size: 1rem;
+            }
+        }
+        #btnCloseMenu {
+            width: 2.5rem;
+        }
+    }
+}

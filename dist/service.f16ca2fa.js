@@ -36878,7 +36878,7 @@ exports.default = _default;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports.default = renderWorks;
 
 var _app = _interopRequireDefault(require("@firebase/app"));
 
@@ -36888,22 +36888,23 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var database = _app.default.firestore();
 
-var works = [];
-database.collection("trabalhos").get().then(function (querySnapshot) {
-  querySnapshot.forEach(function (doc) {
-    var item = {
-      cargo: doc.data().cargo,
-      empresa: doc.data().empresa,
-      descricao: doc.data().descricao,
-      data_entrada: doc.data().data_entrada.toDate(),
-      data_saida: doc.data().data_saida.toDate()
-    };
-    works.push(item);
+function renderWorks() {
+  database.collection("trabalhos").orderBy("order", "desc").get().then(function (querySnapshot) {
+    var arrayItems = querySnapshot.docs.map(function (doc) {
+      return doc.data();
+    });
+    render(arrayItems);
   });
-});
-console.log(works);
-var _default = works;
-exports.default = _default;
+}
+
+function render(array) {
+  var newArray = array.map(function (item) {
+    return "\n            <div class=\"empresa\">\n            <span class=\"empresa-ano\">".concat(item.data_entrada.toDate().toISOString().slice(0, 4), " ").concat(item.data_saida ? ' - ' + item.data_saida.toDate().toISOString().slice(0, 4) : '', "</span>\n            <h3 class=\"empresa-titulo\">").concat(item.empresa, "</h3>\n            <span class=\"empresa-titulo\">").concat(item.cargo, "</span>\n            <p class=\"empresa-texto\">").concat(item.descricao, "</p>\n            <ul class=\"empresa-habilidades\">\n            ").concat(item.techs.map(function (obj) {
+      return "<li>".concat(obj, "</li>");
+    }), "\n            </ul>\n            </div>\n            ");
+  });
+  document.getElementById("cards-exp").innerHTML = newArray;
+}
 },{"@firebase/app":"../node_modules/@firebase/app/dist/index.esm.js","./firebase":"../src/service/firebase.js"}],"../src/service/getUser.js":[function(require,module,exports) {
 "use strict";
 
@@ -36935,6 +36936,37 @@ database.collection("user").get().then(function (querySnapshot) {
 console.log(user);
 var _default = user;
 exports.default = _default;
+},{"@firebase/app":"../node_modules/@firebase/app/dist/index.esm.js","./firebase":"../src/service/firebase.js"}],"../src/service/getExp.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = renderExp;
+
+var _app = _interopRequireDefault(require("@firebase/app"));
+
+require("./firebase");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var database = _app.default.firestore();
+
+function renderExp() {
+  database.collection("formacao").get().then(function (querySnapshot) {
+    var arrayItems = querySnapshot.docs.map(function (doc) {
+      return doc.data();
+    });
+    render(arrayItems);
+  });
+}
+
+function render(array) {
+  var newArray = array.map(function (item) {
+    return "\n            <li class=\"faculdade\">\n                    <span class=\"faculdade-tipo\">".concat(item.tipo, "</span>\n                    <h3 class=\"faculdade-curso\">").concat(item.nome, "</h3>\n                    <span class=\"faculdade-instituicao\">").concat(item.instituicao, "</span>\n                </li>\n            ");
+  });
+  document.getElementById("lista-faculdate").innerHTML = newArray;
+}
 },{"@firebase/app":"../node_modules/@firebase/app/dist/index.esm.js","./firebase":"../src/service/firebase.js"}],"../src/service/index.js":[function(require,module,exports) {
 "use strict";
 
@@ -36943,7 +36975,9 @@ require("./getWorks");
 require("./getUser");
 
 require("./firebase");
-},{"./getWorks":"../src/service/getWorks.js","./getUser":"../src/service/getUser.js","./firebase":"../src/service/firebase.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+
+require("./getExp");
+},{"./getWorks":"../src/service/getWorks.js","./getUser":"../src/service/getUser.js","./firebase":"../src/service/firebase.js","./getExp":"../src/service/getExp.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -36971,7 +37005,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50950" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49323" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

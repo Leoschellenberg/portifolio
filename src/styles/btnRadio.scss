@@ -1,6 +1,6 @@
 .switch {
     --line: #b1b1b1;
-    --dot: #212121;
+    --dot: #b1b1b1;
     --circle: #b1b1b1;
     --duration: .3s;
     --text: #ffffff;
@@ -33,7 +33,7 @@
                 border-radius: 0 2px 2px 0;
             }
             span {
-                padding-left: 56px;
+                padding-left: 2.3rem;
                 line-height: 24px;
                 color: var(--text);
                 &:before {
