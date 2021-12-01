@@ -36968,6 +36968,37 @@ function render(array) {
   });
   document.getElementById("lista-faculdate").innerHTML = newArray;
 }
+},{"@firebase/app":"../node_modules/@firebase/app/dist/index.esm.js","./firebase":"../src/service/firebase.js"}],"../src/service/getCursos.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = renderCursos;
+
+var _app = _interopRequireDefault(require("@firebase/app"));
+
+require("./firebase");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var database = _app.default.firestore();
+
+function renderCursos() {
+  database.collection("cursos").get().then(function (querySnapshot) {
+    var arrayItems = querySnapshot.docs.map(function (doc) {
+      return doc.data();
+    });
+    render(arrayItems);
+  });
+}
+
+function render(array) {
+  var newArray = array.map(function (item) {
+    return "\n            <li>".concat(item.nome, "<span>").concat(item.instituicao, "</span></li>\n            ");
+  });
+  document.getElementById("card-cursos").innerHTML = newArray;
+}
 },{"@firebase/app":"../node_modules/@firebase/app/dist/index.esm.js","./firebase":"../src/service/firebase.js"}],"../src/js/index.js":[function(require,module,exports) {
 "use strict";
 
@@ -36977,12 +37008,15 @@ var _getWorks = _interopRequireDefault(require("../service/getWorks"));
 
 var _getExp = _interopRequireDefault(require("../service/getExp"));
 
+var _getCursos = _interopRequireDefault(require("../service/getCursos"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (function () {
   (0, _fnRenderItems.default)();
   (0, _getWorks.default)();
   (0, _getExp.default)();
+  (0, _getCursos.default)();
   var html = document.querySelector("html");
   var checkbox = document.querySelector("#checkbox");
   var btnHeader = document.querySelector("#btn-menu-header");
@@ -37019,7 +37053,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   //#wrap.active
   //btnHeaderMenu.textContent = "</>";
 })();
-},{"./fnRenderItems":"../src/js/fnRenderItems.js","../service/getWorks":"../src/service/getWorks.js","../service/getExp":"../src/service/getExp.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./fnRenderItems":"../src/js/fnRenderItems.js","../service/getWorks":"../src/service/getWorks.js","../service/getExp":"../src/service/getExp.js","../service/getCursos":"../src/service/getCursos.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;

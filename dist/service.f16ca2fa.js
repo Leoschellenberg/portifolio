@@ -36967,6 +36967,37 @@ function render(array) {
   });
   document.getElementById("lista-faculdate").innerHTML = newArray;
 }
+},{"@firebase/app":"../node_modules/@firebase/app/dist/index.esm.js","./firebase":"../src/service/firebase.js"}],"../src/service/getCursos.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = renderCursos;
+
+var _app = _interopRequireDefault(require("@firebase/app"));
+
+require("./firebase");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var database = _app.default.firestore();
+
+function renderCursos() {
+  database.collection("cursos").get().then(function (querySnapshot) {
+    var arrayItems = querySnapshot.docs.map(function (doc) {
+      return doc.data();
+    });
+    render(arrayItems);
+  });
+}
+
+function render(array) {
+  var newArray = array.map(function (item) {
+    return "\n            <li>".concat(item.nome, "<span>").concat(item.instituicao, "</span></li>\n            ");
+  });
+  document.getElementById("card-cursos").innerHTML = newArray;
+}
 },{"@firebase/app":"../node_modules/@firebase/app/dist/index.esm.js","./firebase":"../src/service/firebase.js"}],"../src/service/index.js":[function(require,module,exports) {
 "use strict";
 
@@ -36977,7 +37008,9 @@ require("./getUser");
 require("./firebase");
 
 require("./getExp");
-},{"./getWorks":"../src/service/getWorks.js","./getUser":"../src/service/getUser.js","./firebase":"../src/service/firebase.js","./getExp":"../src/service/getExp.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+
+require("./getCursos");
+},{"./getWorks":"../src/service/getWorks.js","./getUser":"../src/service/getUser.js","./firebase":"../src/service/firebase.js","./getExp":"../src/service/getExp.js","./getCursos":"../src/service/getCursos.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;

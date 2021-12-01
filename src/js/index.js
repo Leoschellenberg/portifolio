@@ -1,11 +1,13 @@
 import renderItems from './fnRenderItems';
 import renderWorks from '../service/getWorks';
 import renderExp from '../service/getExp';
+import renderCursos from '../service/getCursos';
 
 (() => {
     renderItems();
     renderWorks();
     renderExp();
+    renderCursos();
 
     const html = document.querySelector("html");
     const checkbox = document.querySelector("#checkbox");
