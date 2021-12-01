@@ -29,5 +29,17 @@ function render(array) {
             `
             )
     });
-    document.getElementById("cards-exp").innerHTML = newArray;
+    let arr = "";
+    newArray.map(function(item){
+        arr = arr + item
+    })
+    document.getElementById("cards-exp").innerHTML = arr;
+}
+
+function removeSeparator(array){
+    let newArray = "";
+    array.map(function(item){
+        newArray = newArray + item
+    })
+    return newArray;
 }

@@ -23,5 +23,9 @@ function render(array) {
             `
         )
     });
-    document.getElementById("lista-faculdate").innerHTML = newArray;
+    let arr = "";
+    newArray.map(function(item) {
+        arr = arr + item
+    })
+    document.getElementById("lista-faculdate").innerHTML = arr;
 }

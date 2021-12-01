@@ -36935,7 +36935,19 @@ function render(array) {
       return "<li>".concat(obj, "</li>");
     }), "\n            </ul>\n            </div>\n            ");
   });
-  document.getElementById("cards-exp").innerHTML = newArray;
+  var arr = "";
+  newArray.map(function (item) {
+    arr = arr + item;
+  });
+  document.getElementById("cards-exp").innerHTML = arr;
+}
+
+function removeSeparator(array) {
+  var newArray = "";
+  array.map(function (item) {
+    newArray = newArray + item;
+  });
+  return newArray;
 }
 },{"@firebase/app":"../node_modules/@firebase/app/dist/index.esm.js","./firebase":"../src/service/firebase.js"}],"../src/service/getExp.js":[function(require,module,exports) {
 "use strict";
@@ -36966,7 +36978,11 @@ function render(array) {
   var newArray = array.map(function (item) {
     return "\n            <li class=\"faculdade\">\n                    <span class=\"faculdade-tipo\">".concat(item.tipo, "</span>\n                    <h3 class=\"faculdade-curso\">").concat(item.nome, "</h3>\n                    <span class=\"faculdade-instituicao\">").concat(item.instituicao, "</span>\n                </li>\n            ");
   });
-  document.getElementById("lista-faculdate").innerHTML = newArray;
+  var arr = "";
+  newArray.map(function (item) {
+    arr = arr + item;
+  });
+  document.getElementById("lista-faculdate").innerHTML = arr;
 }
 },{"@firebase/app":"../node_modules/@firebase/app/dist/index.esm.js","./firebase":"../src/service/firebase.js"}],"../src/service/getCursos.js":[function(require,module,exports) {
 "use strict";
@@ -36997,7 +37013,11 @@ function render(array) {
   var newArray = array.map(function (item) {
     return "\n            <li>".concat(item.nome, "<span>").concat(item.instituicao, "</span></li>\n            ");
   });
-  document.getElementById("card-cursos").innerHTML = newArray;
+  var arr = "";
+  newArray.map(function (item) {
+    arr = arr + item;
+  });
+  document.getElementById("card-cursos").innerHTML = arr;
 }
 },{"@firebase/app":"../node_modules/@firebase/app/dist/index.esm.js","./firebase":"../src/service/firebase.js"}],"../src/js/index.js":[function(require,module,exports) {
 "use strict";

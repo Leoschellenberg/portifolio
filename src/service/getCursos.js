@@ -19,5 +19,10 @@ function render(array) {
             `
         )
     });
-    document.getElementById("card-cursos").innerHTML = newArray;
+
+    let arr = "";
+    newArray.map(function(item) {
+        arr = arr + item
+    })
+    document.getElementById("card-cursos").innerHTML = arr;
 }
