@@ -3,7 +3,7 @@
     background-color: #383838;
     max-width: 100%;
     .formacao {
-        //display: flex;
+        display: flex;
         padding: 5rem 0;
         width: 100%;
         max-width: 1300px;
@@ -192,6 +192,15 @@
     }
 }
 
+@media (max-width: 800px) {
+    #section-formacao .formacao .formacao-container::after {
+        width: 130px;
+        height: 100px;
+        top: -5rem;
+        left: 2rem;
+    }
+}
+
 @media (max-width: 700px) {
     #section-formacao .formacao {
         padding: 0;
@@ -227,5 +236,8 @@
     #section-formacao .formacao .formacao-extra h3::before {
         left: 0;
         top: -2rem;
+    }
+    #section-formacao .formacao .formacao-container {
+        padding: 0;
     }
 }

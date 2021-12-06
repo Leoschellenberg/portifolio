@@ -6,7 +6,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 2000;
+    z-index: 1;
     transition: .5s;
     .header-container {
         display: flex;
@@ -32,7 +32,7 @@ header {
             padding: 1rem;
             background: #9f00f5;
             border-radius: .2rem;
-            box-shadow: 0px 0px 30px -5px rgb(159, 0, 245);
+            box-shadow: 0px 0px 15px -5px rgb(159, 0, 245);
             span {
                 width: 1rem;
                 border: 1px solid #fff;
@@ -41,8 +41,13 @@ header {
     }
 }
 
+header.headerNoneNav {
+    top: -10rem;
+}
+
 header.headerScroll {
     background-color: rgb(33, 33, 33, 99%);
+    box-shadow: 0px 0px 20px -10px rgb(159, 0, 245);
 }
 
 @media (max-width: 800px) {

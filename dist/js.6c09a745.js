@@ -37052,10 +37052,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   btnHeader.addEventListener('click', function () {
     nav.classList.toggle('active');
     wrap.classList.toggle('active');
+    Header.classList.add("headerNoneNav");
   });
   btnHeaderMenu.addEventListener('click', function () {
     nav.classList.toggle('active');
     wrap.classList.toggle('active');
+    Header.classList.remove("headerNoneNav");
   });
   $(menuClick).click(function (event) {
     nav.classList.toggle('active');

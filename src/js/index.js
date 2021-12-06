@@ -24,10 +24,12 @@ import renderCursos from '../service/getCursos';
     btnHeader.addEventListener('click', function() {
         nav.classList.toggle('active');
         wrap.classList.toggle('active');
+        Header.classList.add("headerNoneNav");
     })
     btnHeaderMenu.addEventListener('click', function() {
         nav.classList.toggle('active');
         wrap.classList.toggle('active');
+        Header.classList.remove("headerNoneNav");
     })
 
     $(menuClick).click(function(event) {

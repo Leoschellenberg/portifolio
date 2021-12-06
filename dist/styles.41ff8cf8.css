@@ -110,7 +110,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 2000;
+  z-index: 1;
   transition: 0.5s;
 }
 header .header-container {
@@ -136,15 +136,20 @@ header .header-container button {
   padding: 1rem;
   background: #9f00f5;
   border-radius: 0.2rem;
-  box-shadow: 0px 0px 30px -5px #9f00f5;
+  box-shadow: 0px 0px 15px -5px #9f00f5;
 }
 header .header-container button span {
   width: 1rem;
   border: 1px solid #fff;
 }
 
+header.headerNoneNav {
+  top: -10rem;
+}
+
 header.headerScroll {
   background-color: rgba(33, 33, 33, 0.99);
+  box-shadow: 0px 0px 20px -10px #9f00f5;
 }
 
 @media (max-width: 800px) {
@@ -527,6 +532,7 @@ section .section-experiencia .empresa-habilidades li {
   max-width: 100%;
 }
 #section-formacao .formacao {
+  display: flex;
   padding: 5rem 0;
   width: 100%;
   max-width: 1300px;
@@ -712,6 +718,14 @@ section .section-experiencia .empresa-habilidades li {
     margin-bottom: 1rem;
   }
 }
+@media (max-width: 800px) {
+  #section-formacao .formacao .formacao-container::after {
+    width: 130px;
+    height: 100px;
+    top: -5rem;
+    left: 2rem;
+  }
+}
 @media (max-width: 700px) {
   #section-formacao .formacao {
     padding: 0;
@@ -742,6 +756,10 @@ section .section-experiencia .empresa-habilidades li {
 #section-formacao .formacao .formacao-extra h3::before {
     left: 0;
     top: -2rem;
+  }
+
+  #section-formacao .formacao .formacao-container {
+    padding: 0;
   }
 }
 .switch {
@@ -952,9 +970,7 @@ section .section-experiencia .empresa-habilidades li {
   display: flex;
   z-index: 10000;
   height: 100%;
-  width: 30vw;
   right: 0;
-  width: -30vw;
   top: 0;
 }
 
