@@ -103,65 +103,70 @@ ul {
 
 /* FIM CSS SCROLL */
 header {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
-  padding: 5vh 2rem;
-  max-width: 1300px;
-  max-height: 10vh;
-  margin: 0 auto;
+  justify-content: center;
   align-items: center;
+  z-index: 2000;
+  transition: 0.5s;
 }
-header span img {
+header .header-container {
   display: flex;
+  height: 100%;
+  width: 100%;
+  padding: 0 5rem;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1300px;
 }
-header button {
+header .header-container span img {
+  width: 80%;
+}
+header .header-container button {
   display: grid;
+  max-width: 3rem;
   cursor: pointer;
   border: none;
-  position: fixed;
-  right: 3rem;
   grid-template-rows: repeat(1fr);
   gap: 0.2rem;
   padding: 1rem;
   background: #9f00f5;
   border-radius: 0.2rem;
   box-shadow: 0px 0px 30px -5px #9f00f5;
-  z-index: 2000;
 }
-header button span {
+header .header-container button span {
   width: 1rem;
   border: 1px solid #fff;
 }
 
-#btn-menu-header.btn-menu-header-scroll {
-  background: #9f00f5de;
-  border-radius: 0.2rem;
-  box-shadow: 0px 0px 30px -5px rgba(159, 0, 245, 0.726);
-  z-index: 2000;
-}
-#btn-menu-header.btn-menu-header-scroll span {
-  width: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.651);
+header.headerScroll {
+  background-color: rgba(33, 33, 33, 0.99);
 }
 
 @media (max-width: 800px) {
-  header {
-    flex-direction: column;
-    gap: 3rem;
+  header .header-container {
+    padding: 0 2rem;
   }
-  header ul li a {
-    background-color: #b1b1b11c;
-    border-radius: 0.5rem;
+  header .header-container img {
+    max-width: 70%;
+  }
+}
+@media (max-width: 500px) {
+  header .header-container {
+    padding: 0 1rem;
   }
 }
 main {
   display: grid;
+  margin: 0 auto;
+  padding: 0 5rem;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
   max-width: 1300px;
-  padding: 0 5rem;
-  margin: 0 auto;
-  height: calc(100vh - 8.5rem);
+  height: calc(100vh - 10rem);
 }
 main .main-div-title {
   display: flex;
@@ -212,6 +217,7 @@ main img {
   main {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, 1fr);
+    margin-top: 8rem;
   }
   main .main-div-title {
     justify-content: center;
@@ -227,7 +233,7 @@ main img {
 section {
   display: flex;
   flex-direction: column;
-  padding: 2rem;
+  padding: 2rem 5rem;
   max-width: 1300px;
   margin: 0 auto;
   align-items: center;
@@ -330,7 +336,7 @@ section .section-contato ul li::before {
 }
 section .section-experiencia {
   max-width: 1300px;
-  padding: 40px 20px;
+  padding: 2rem 0;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -404,6 +410,11 @@ section .section-experiencia .empresa-habilidades li {
   color: #fff;
 }
 
+@media (max-width: 1200px) {
+  section .section-experiencia .empresa {
+    grid-template-columns: 1fr;
+  }
+}
 @media (max-width: 1000px) {
   section {
     padding-top: 5rem;
@@ -465,6 +476,10 @@ section .section-experiencia .empresa-habilidades li {
     position: initial;
     margin-bottom: 10px;
   }
+
+  section {
+    padding: 2rem;
+  }
 }
 @media (max-width: 700px) {
   section {
@@ -494,6 +509,7 @@ section .section-experiencia .empresa-habilidades li {
     grid-template-columns: 1fr;
   }
   section .section-experiencia .subtitulo-experiencia {
+    padding: 0;
     text-align: center;
     font-size: 3rem;
   }
@@ -510,7 +526,6 @@ section .section-experiencia .empresa-habilidades li {
   max-width: 100%;
 }
 #section-formacao .formacao {
-  display: flex;
   padding: 5rem 0;
   width: 100%;
   max-width: 1300px;
@@ -821,7 +836,7 @@ section .section-experiencia .empresa-habilidades li {
   right: 0;
   left: 0;
   height: 100%;
-  z-index: 2000;
+  z-index: 3000;
 }
 
 #nav {
@@ -915,7 +930,6 @@ section .section-experiencia .empresa-habilidades li {
   width: 3rem;
   height: 100%;
   background-color: #3c3c3c;
-  border-radius: 1rem 0 0 1rem;
   font-weight: bold;
   font-size: 1rem;
   color: #e7e7e7;

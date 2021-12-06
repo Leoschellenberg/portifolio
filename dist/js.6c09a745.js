@@ -36920,6 +36920,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var database = _app.default.firestore();
 
+var teste = "";
+
 function renderWorks() {
   database.collection("trabalhos").orderBy("order", "desc").get().then(function (querySnapshot) {
     var arrayItems = querySnapshot.docs.map(function (doc) {
@@ -36931,23 +36933,22 @@ function renderWorks() {
 
 function render(array) {
   var newArray = array.map(function (item) {
-    return "\n            <div class=\"empresa\">\n            <span class=\"empresa-ano\">".concat(item.data_entrada.toDate().toISOString().slice(0, 4), " ").concat(item.data_saida ? ' - ' + item.data_saida.toDate().toISOString().slice(0, 4) : '', "</span>\n            <h3 class=\"empresa-titulo\">").concat(item.empresa, "</h3>\n            <span class=\"empresa-titulo\">").concat(item.cargo, "</span>\n            <p class=\"empresa-texto\">").concat(item.descricao, "</p>\n            <ul class=\"empresa-habilidades\">\n            ").concat(item.techs.map(function (obj) {
-      return "<li>".concat(obj, "</li>");
-    }), "\n            </ul>\n            </div>\n            ");
+    //console.log(item.techs)
+    return "\n            <div class=\"empresa\">\n            <span class=\"empresa-ano\">".concat(item.data_entrada.toDate().toISOString().slice(0, 4), " ").concat(item.data_saida ? ' - ' + item.data_saida.toDate().toISOString().slice(0, 4) : '', "</span>\n            <h3 class=\"empresa-titulo\">").concat(item.empresa, "</h3>\n            <span class=\"empresa-titulo\">").concat(item.cargo, "</span>\n            <p class=\"empresa-texto\">").concat(item.descricao, "</p>\n            <ul class=\"empresa-habilidades\">\n                ").concat(newArrayTechs(item.techs), "\n            </ul>\n            </div>\n            ");
   });
   var arr = "";
   newArray.map(function (item) {
     arr = arr + item;
   });
   document.getElementById("cards-exp").innerHTML = arr;
-}
 
-function removeSeparator(array) {
-  var newArray = "";
-  array.map(function (item) {
-    newArray = newArray + item;
-  });
-  return newArray;
+  function newArrayTechs(array) {
+    var newTechs = "";
+    array.map(function (item) {
+      return newTechs += "<li>".concat(item, "</li>");
+    });
+    return newTechs;
+  }
 }
 },{"@firebase/app":"../node_modules/@firebase/app/dist/index.esm.js","./firebase":"../src/service/firebase.js"}],"../src/service/getExp.js":[function(require,module,exports) {
 "use strict";
@@ -37040,6 +37041,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   var html = document.querySelector("html");
   var checkbox = document.querySelector("#checkbox");
   var btnHeader = document.querySelector("#btn-menu-header");
+  var Header = document.querySelector("header");
   var nav = document.querySelector("#nav");
   var btnHeaderMenu = document.querySelector("#btnCloseMenu");
   var menuClick = document.getElementsByClassName("menu-click");
@@ -37061,11 +37063,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   });
   window.addEventListener("scroll", function (event) {
     if (document.documentElement.scrollTop > 0) {
-      btnHeader.classList.add('btn-menu-header-scroll');
+      Header.classList.add('headerScroll');
     }
 
     if (document.documentElement.scrollTop === 0) {
-      btnHeader.classList.remove('btn-menu-header-scroll');
+      Header.classList.remove('headerScroll');
     }
   }); // wrap.addEventListener("click", function() {
   //     console.log(nav.classList.contains('active'))
@@ -37101,7 +37103,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49323" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55064" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

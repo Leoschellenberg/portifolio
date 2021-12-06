@@ -1,54 +1,64 @@
 header {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
-    padding: 5vh 2rem;
-    max-width: 1300px;
-    max-height: 10vh;
-    margin: 0 auto;
+    justify-content: center;
     align-items: center;
-    span {
-        img {
-            display: flex;
-        }
-    }
-    button {
-        display: grid;
-        cursor: pointer;
-        border: none;
-        position: fixed;
-        right: 3rem;
-        grid-template-rows: repeat(1fr);
-        gap: .2rem;
-        padding: 1rem;
-        background: #9f00f5;
-        border-radius: .2rem;
-        box-shadow: 0px 0px 30px -5px rgb(159, 0, 245);
-        z-index: 2000;
+    z-index: 2000;
+    transition: .5s;
+    .header-container {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        padding: 0 5rem;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1300px;
         span {
-            width: 1rem;
-            border: 1px solid #fff;
+            img {
+                width: 80%;
+            }
+        }
+        button {
+            display: grid;
+            max-width: 3rem;
+            cursor: pointer;
+            border: none;
+            grid-template-rows: repeat(1fr);
+            gap: .2rem;
+            padding: 1rem;
+            background: #9f00f5;
+            border-radius: .2rem;
+            box-shadow: 0px 0px 30px -5px rgb(159, 0, 245);
+            span {
+                width: 1rem;
+                border: 1px solid #fff;
+            }
         }
     }
 }
 
-#btn-menu-header.btn-menu-header-scroll {
-    background: #9f00f5de;
-    border-radius: .2rem;
-    box-shadow: 0px 0px 30px -5px rgba(159, 0, 245, 0.726);
-    z-index: 2000;
-    span {
-        width: 1rem;
-        border: 1px solid rgba(255, 255, 255, 0.651);
-    }
+header.headerScroll {
+    background-color: rgb(33, 33, 33, 99%);
 }
 
 @media (max-width: 800px) {
     header {
-        flex-direction: column;
-        gap: 3rem;
-        ul li a {
-            background-color: #b1b1b11c;
-            border-radius: 0.5rem;
+        .header-container {
+            padding: 0 2rem;
+            img {
+                max-width: 70%;
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    header {
+        .header-container {
+            padding: 0 1rem;
         }
     }
 }

@@ -12,6 +12,7 @@ import renderCursos from '../service/getCursos';
     const html = document.querySelector("html");
     const checkbox = document.querySelector("#checkbox");
     const btnHeader = document.querySelector("#btn-menu-header");
+    const Header = document.querySelector("header");
     const nav = document.querySelector("#nav");
     const btnHeaderMenu = document.querySelector("#btnCloseMenu");
     const menuClick = document.getElementsByClassName("menu-click");
@@ -36,10 +37,10 @@ import renderCursos from '../service/getCursos';
 
     window.addEventListener("scroll", function(event) {
         if (document.documentElement.scrollTop > 0) {
-            btnHeader.classList.add('btn-menu-header-scroll');
+            Header.classList.add('headerScroll');
         }
         if (document.documentElement.scrollTop === 0) {
-            btnHeader.classList.remove('btn-menu-header-scroll');
+            Header.classList.remove('headerScroll');
         }
     })
 
