@@ -35,6 +35,7 @@ import renderCursos from '../service/getCursos';
     $(menuClick).click(function(event) {
         nav.classList.toggle('active');
         wrap.classList.toggle('active');
+        Header.classList.remove("headerNoneNav");
     });
 
     window.addEventListener("scroll", function(event) {
