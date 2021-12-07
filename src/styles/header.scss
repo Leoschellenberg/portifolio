@@ -18,8 +18,8 @@ header {
         max-width: 1300px;
         span {
             img {
-                height: 5rem;
-                width: 80%;
+                height: 3rem;
+                padding: .5rem 0;
             }
         }
         button {
@@ -53,9 +53,7 @@ header.headerScroll {
     header {
         .header-container {
             padding: 0 2rem;
-            img {
-                max-width: 70%;
-            }
+            img {}
         }
     }
 }
