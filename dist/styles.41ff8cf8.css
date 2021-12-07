@@ -9,6 +9,7 @@ body {
 }
 
 :root {
+  --color-primary: #A839FF;
   --background-color: #171717;
   --color-header-menu: #fff;
   --color-title: #fff;
@@ -169,7 +170,7 @@ main {
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
   max-width: 1300px;
-  height: calc(100vh - 10rem);
+  height: 100vh;
 }
 main .main-div-title {
   display: flex;
@@ -303,6 +304,7 @@ section .section-card-work .border-bottom-card {
 }
 section .section-contato {
   display: flex;
+  width: 100%;
 }
 section .section-contato ul {
   display: grid;
@@ -329,13 +331,11 @@ section .section-contato ul li a {
   padding: 0 1rem;
   font-size: 1.2rem;
 }
-section .section-contato ul li::before {
-  content: "";
-  padding: 0.25rem;
-  background-color: #A620F0;
-  border: 1.35rem solid #212121;
-  border-radius: 50%;
-  display: flex;
+section .section-contato ul li a svg path {
+  fill: var(--color-title-experiencia);
+}
+section .section-contato ul li a:hover svg path {
+  fill: var(--color-primary);
 }
 section .section-experiencia {
   max-width: 1300px;
@@ -441,7 +441,6 @@ section .section-experiencia .empresa-habilidades li {
     align-items: center;
   }
   section .section-contato ul {
-    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
   }
 }
@@ -488,13 +487,6 @@ section .section-experiencia .empresa-habilidades li {
   section {
     gap: 3rem;
   }
-  section .section-contato {
-    align-items: center;
-  }
-  section .section-contato ul {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
   section .section-sobre h2 {
     font-size: 1.5rem;
   }
@@ -507,6 +499,13 @@ section .section-experiencia .empresa-habilidades li {
   section {
     gap: 3rem;
     padding: 1rem;
+  }
+  section .section-contato {
+    align-items: center;
+  }
+  section .section-contato ul {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
   }
   section .empresa {
     grid-template-columns: 1fr;

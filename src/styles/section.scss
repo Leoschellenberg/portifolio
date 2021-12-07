@@ -67,6 +67,7 @@ section {
     }
     .section-contato {
         display: flex;
+        width: 100%;
         ul {
             display: grid;
             flex: 1;
@@ -89,15 +90,21 @@ section {
                     color: var(--color-sub-contato);
                     padding: 0 1rem;
                     font-size: 1.2rem;
+                    svg path {
+                        fill: var(--color-title-experiencia);
+                    }
+                    &:hover svg path {
+                        fill: var(--color-primary)
+                    }
                 }
-                &::before {
-                    content: '';
-                    padding: 0.25rem;
-                    background-color: #A620F0;
-                    border: 1.35rem solid #212121;
-                    border-radius: 50%;
-                    display: flex;
-                }
+                // &::before {
+                //     content: '';
+                //     padding: 0.25rem;
+                //     background-color: #A620F0;
+                //     border: 1.35rem solid #212121;
+                //     border-radius: 50%;
+                //     display: flex;
+                // }
             }
         }
     }
@@ -205,7 +212,7 @@ section {
         .section-contato {
             align-items: center;
             ul {
-                grid-template-columns: repeat(2, 1fr);
+                //grid-template-columns: repeat(2, 1fr);
                 gap: 2rem;
             }
         }
@@ -256,13 +263,6 @@ section {
 @media (max-width: 700px) {
     section {
         gap: 3rem;
-        .section-contato {
-            align-items: center;
-            ul {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-        }
         .section-sobre {
             h2 {
                 font-size: 1.5rem;
@@ -281,6 +281,13 @@ section {
     section {
         gap: 3rem;
         padding: 1rem;
+        .section-contato {
+            align-items: center;
+            ul {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+        }
         .empresa {
             grid-template-columns: 1fr;
         }
