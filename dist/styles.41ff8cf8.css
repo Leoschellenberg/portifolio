@@ -331,8 +331,8 @@ section .section-contato ul li a {
   padding: 0 1rem;
   font-size: 1.2rem;
 }
-section .section-contato ul li a svg path {
-  fill: var(--color-title-experiencia);
+section .section-contato ul li a svg path #teste {
+  fill: red !important;
 }
 section .section-contato ul li a:hover svg path {
   fill: var(--color-primary);

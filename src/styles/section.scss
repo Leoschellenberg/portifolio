@@ -90,8 +90,8 @@ section {
                     color: var(--color-sub-contato);
                     padding: 0 1rem;
                     font-size: 1.2rem;
-                    svg path {
-                        fill: var(--color-title-experiencia);
+                    svg path #teste {
+                        fill: red !important;
                     }
                     &:hover svg path {
                         fill: var(--color-primary)

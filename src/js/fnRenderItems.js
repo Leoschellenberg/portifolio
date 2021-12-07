@@ -20,4 +20,5 @@ export default function renderItems() {
 
     const headerNav = document.querySelector("nav");
     headerNav.innerHTML = myHeaderNav;
+
 }
