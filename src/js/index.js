@@ -39,10 +39,10 @@ import renderCursos from '../service/getCursos';
     });
 
     window.addEventListener("scroll", function(event) {
-        if (document.documentElement.scrollTop > 0) {
+        if (document.documentElement.scrollTop > 90) {
             Header.classList.add('headerScroll');
         }
-        if (document.documentElement.scrollTop === 0) {
+        if (document.documentElement.scrollTop < 90) {
             Header.classList.remove('headerScroll');
         }
     })

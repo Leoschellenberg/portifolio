@@ -111,7 +111,7 @@ header {
   justify-content: center;
   align-items: center;
   z-index: 1;
-  transition: 0.5s;
+  transition: 0.4s;
 }
 header .header-container {
   display: flex;

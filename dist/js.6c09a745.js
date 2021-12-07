@@ -37065,11 +37065,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     Header.classList.remove("headerNoneNav");
   });
   window.addEventListener("scroll", function (event) {
-    if (document.documentElement.scrollTop > 0) {
+    if (document.documentElement.scrollTop > 90) {
       Header.classList.add('headerScroll');
     }
 
-    if (document.documentElement.scrollTop === 0) {
+    if (document.documentElement.scrollTop < 90) {
       Header.classList.remove('headerScroll');
     }
   }); // wrap.addEventListener("click", function() {

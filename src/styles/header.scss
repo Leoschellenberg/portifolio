@@ -7,7 +7,7 @@ header {
     justify-content: center;
     align-items: center;
     z-index: 1;
-    transition: .5s;
+    transition: .4s;
     .header-container {
         display: flex;
         height: 100%;
@@ -53,7 +53,6 @@ header.headerScroll {
     header {
         .header-container {
             padding: 0 2rem;
-            img {}
         }
     }
 }
