@@ -10,6 +10,7 @@ body {
 
 :root {
   --color-primary: #A839FF;
+  --color-svg: #717171;
   --background-color: #171717;
   --color-header-menu: #fff;
   --color-title: #fff;
@@ -331,8 +332,8 @@ section .section-contato ul li a {
   padding: 0 1rem;
   font-size: 1.2rem;
 }
-section .section-contato ul li a svg path #teste {
-  fill: red !important;
+section .section-contato ul li a svg path {
+  fill: var(--color-svg);
 }
 section .section-contato ul li a:hover svg path {
   fill: var(--color-primary);
