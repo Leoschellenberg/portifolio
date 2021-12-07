@@ -17,6 +17,4 @@ database.collection("user").get().then((querySnapshot) => {
     });
 });
 
-console.log(user)
-
 export default user;

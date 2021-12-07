@@ -34768,7 +34768,6 @@ database.collection("user").get().then(function (querySnapshot) {
     user.push(item);
   });
 });
-console.log(user);
 var _default = user;
 exports.default = _default;
 },{"@firebase/app":"../node_modules/@firebase/app/dist/index.esm.js","./firebase":"../src/service/firebase.js"}],"../src/service/getExp.js":[function(require,module,exports) {
